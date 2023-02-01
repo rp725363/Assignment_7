@@ -1,1 +1,35 @@
+1. What is the name of the feature responsible for generating Regex objects?
+Ans:-
+The feature responsible for generating reguler expression (Rogex) object is called "Reguler expression pattern"
 
+2. Why do raw strings often appear in Regex objects?
+Ans:-
+Raw string more oftenly used in regular expression objects beacuse reguler expression contains alot of backslashes 
+which are specially used for a special purpose in regular exprassion , in regular python string. Each backslash must be escaped 
+in order to represent a single backslash.This can make  regular srring diffecult to read and understand , while expression haveing multiple backslashes.
+
+3. What is the return value of the search() method?
+Ans:-
+In reguler expression search() method returns the matched value anywhere in string ot "None" if there is no match in string .
+Example as below:-
+import re
+
+string="this is my string rajendra"
+pattern=r"rajendra"
+
+match=re.search(pattern,string)
+
+if match:
+    print("Match found")
+    print("Match text",match.group())
+    print("start index",match.start())
+    print("end index",match.end())
+else:
+    print("Not found")
+    
+    
+    4. From a Match item, how do you get the actual strings that match the pattern?
+Ans:-
+Match basiclly used to matach a string or group of string in regular expression , and here group() method return string that matches
+entire pattern.
+For example:-

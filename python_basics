@@ -33,3 +33,59 @@ Ans:-
 Match basiclly used to matach a string or group of string in regular expression , and here group() method return string that matches
 entire pattern.
 For example:-
+import re
+
+string="this is rajendra pandey"
+
+pattern="rajendra"
+
+match=re.search(pattern,string)
+
+if match:
+    print("matched")
+else:
+    print("not found")
+    
+by running above code , you will end up getting details as below , here we found a pattern match in string .
+output:-
+matched
+
+5. In the regex which created from the r'(\d\d\d)-(\d\d\d-\d\d\d\d)', what does group zero cover? Group 2? Group 1?
+Ans:-
+Here we can get the match found in digit by using match function in regular expression. examlpe as below.
+
+import re
+
+digit="334-453-5047"  #here we have to fill the digits in patter which we are supposed to match or we have to make a patter as per digit expression
+pattern=r'(\d\d\d)-(\d\d\d-\d\d\d\d)'
+
+match=re.search(digit,pattern)
+
+if match:
+     print(match.group(0))
+     print(match.group(1))
+     print(match.group(2))
+ else:
+     print("not found")
+
+if this function fount your pattern or given data matched the output will be matched else it will give you not found error.
+
+6. In standard expression syntax, parentheses and intervals have distinct meanings. How can you tell a regex that you want it to fit real parentheses and periods?
+Ans:-
+
+
+
+
+
+
+
+7. The findall() method returns a string list or a list of string tuples. What causes it to return one of the two options?
+Ans:-
+
+
+
+
+
+
+
+

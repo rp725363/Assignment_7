@@ -118,6 +118,48 @@ example as follows:-
 below example will match to apple or banana
 apple|banana
 
+9. In regular expressions, what does the character stand for?
+Ans:-  
+In regular expression charector "." called dot or period waildcard and it represents any single charector accept newline
+for example - 
+in regular expression "c.t"- will match to "cat", "cot"  etc, but will not match to "c&t" beacuse dot will match newline it only matches to charector.
+
+10.In regular expressions, what is the difference between the + and * characters?
+Ans-
+In reguler expression "+" and "*" both are quatifier that modify the behoivers of preceding pattern ,
+main difference between "+" and "*" is "+" requires at least once occurence in preceing pattern while "*" requires zero or more occcurence 
+to modify the preceding behaoiver
+
+11. What is the difference between {4} and {4,5} in regular expression?
+Ans;-
+In the curly braces we represents the exact number of occurences in preceding pattern that should be matched,
+the difference between {4} and {4,5} are as follows-
+{4} represents that preceding pattern should match exact 4 occurences like "a{4}" = "aaaa"
+
+and {4,5} represenrs of a range of pattern that can matched with preceding pattern in reguler expression like as below.
+"a{4,5}" will matche to "aaaa" and "aaaaa" and will not match with "aaa" or "aaaaaaaa"
+
+12. What do you mean by the \d, \w, and \s shorthand character classes signify in regular expressions?
+Ans-
+In reguler expression backslash followed by charectors userf to represents a shorthand charector classes that match the certain type of charectors
+Here are \d, \w, \s are signify as below.
+\d matches the digit charectors it is equivelent to (0-9)
+\w matches to letter , digit and underscore , it is wquilevent to (A-Za-z0-9).
+\s matches ths white space charectors such as space , tab or newline , it is equilevent to (\t\n\r\f\v).
+
+this charectos make easy to us to write reguler expression that match the certain types of charecotrs.
+
+13. What do means by \D, \W, and \S shorthand character classes signify in regular expressions?
+Ans;-
+In reguler expression charectors in capital letter use for negated version of lower case.
+Here is what they signfy.
+\D matches to any charectors which is not a digit , it is equilevent to {^0-9}
+\W matched to any charector which is not word , i.e anythings other than letter , digits and underscore it is equilevent to [A-Za-z0-9]
+\S matched to any charector that matches any charectos that is not whilespace  , it is equilevent to [^\t\n\r\f\v]
+these negated charectos are usefull when you are when you want to match that are not certain types.
+
+14. What is the difference between .*? and .*?
+Ans:-
 
 
 

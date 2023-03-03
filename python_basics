@@ -158,8 +158,26 @@ Here is what they signfy.
 \S matched to any charector that matches any charectos that is not whilespace  , it is equilevent to [^\t\n\r\f\v]
 these negated charectos are usefull when you are when you want to match that are not certain types.
 
-14. What is the difference between .*? and .*?
+14. What is the difference between .*? and .*   ?
 Ans:-
+*? this pattern represents matches zero or more occurence in non-greedy way "?" makes makes quantifier "8" non-greedy.
+it means it matches to few more charectors as possible to satisfy the overall pattern.
+
+"*" reprents matches with zero or mre charectors in greedy way , without the question mark the quantifier is greedy , which means it match as many as charectos
+are required to satisfy the overall pattern.
+
+
+15. What is the syntax for matching both numbers and lowercase letters with a character class?
+Ans:-
+In reguler expression we basically use \d and \w to matches lower case letter with any charector class.
+for example [a-z] this matches to all smallcase charectos and [0-9] this matches to disits
+and \d\w is also represents [A-Za-z0-9].
+
+
+16. What is the procedure for making a normal expression in regax case insensitive?
+Ans:-
+To make a reguler expression case insensitive we can use flag of modifier "!" that support mostly all programming language.
+By adding this flag follwing by any reguler expression we regardsless of case of letter of charectors.
 
 
 

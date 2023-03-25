@@ -180,6 +180,128 @@ To make a reguler expression case insensitive we can use flag of modifier "!" th
 By adding this flag follwing by any reguler expression we regardsless of case of letter of charectors.
 
 
+17. What does the . character normally match? What does it match if re.DOTALL is passed as 2nd argument in re.compile()?
+Ans-
+In regular expression "." matches any charechter accept newline ,   for example- in regular expression a.b , would match any string that has an "a" followed
+by any single charector followed by "b".
+how ever if we pass flag re.DOTALL() as second argument to re.compile() then the  "." charector will match any charector including newline, in this case 
+regular exprssion (a.b) will match any string that has an 'a' followed by any charecter then followed by "b'.
+
+import re
+
+text = 'abc\n123'
+
+regex1 = re.compile('a.b')
+match1 = regex1.search(text)
+print(match1.group())  # output: 'abc'
+
+regex2 = re.compile('a.b', re.DOTALL)
+match2 = regex2.search(text)
+print(match2.group())  # output: 'abc\n1'
+
+18. If numReg = re.compile(r'\d+'), what will numRegex.sub('X', '11 drummers, 10 pipers, five rings, 4 hen') return?
+Ans:-Here substring 11,10 and 4 will be replaced by X , wihile 'five' will not be replaced beacuse it does not match to regular expression
+resuls are as given below
+X drummers,X pipers,five rings,X hen
+
+19. What does passing re.VERBOSE as the 2nd argument to re.compile() allow to do?
+Ans-
+Paassing re.VERBOSE as second argument to re.compile() in python makes to write regular expression in more readable and maintenable format by ignoring the 
+whitspace and comment inside the regular expression.
+
+20. How would you write a regex that match a number with comma for every three digits? It must match the given following:
+to match the number with comma after the digit we can use (^\d{1,3}(,\d{3})*$) as below:-
+regex = re.compile(r'^\d{1,3}(,\d{3})*$')
+
+strings = [
+    '1',
+    '10',
+    '100',
+    '1,000',
+    '10,000',
+    '100,000',
+    '1,000,000',
+    '10,000,000',
+    '100,000,000',
+    '1,00',
+    '1234',
+    '123,45,67',
+    ',1000',
+    '1,000,00',
+    '1,00,000'
+]
+
+for string in strings:
+    if regex.match(string):
+        print(f"Matched: {string}")
+    else:
+        print(f"Not matched: {string}")
+        
+        
+        
+21. How would you write a regex that matches the full name of someone whose last name is Watanabe? You can assume that the first name that comes before 
+it will always be one word that begins with a capital letter. The regex must match the following:
+'Haruto Watanabe'
+'Alice Watanabe'
+'RoboCop Watanabe'
+but not the following:
+'haruto Watanabe' (where the first name is not capitalized)
+'Mr. Watanabe' (where the preceding word has a nonletter character)
+'Watanabe' (which has no first name)
+'Haruto watanabe' (where Watanabe is not capitalized)
+
+Ans:-
+For that we can use ^[A-Z][a-z]+\sWatanabe$ to match as below code.
+
+regex = re.compile(r'^[A-Z][a-z]+\sWatanabe$')
+
+names = [
+    'Ken Watanabe',
+    'Tomomi Watanabe',
+    'Mari Watanabe',
+    'John Smith',
+    'Amy Watanabe',
+    'Watanabe',
+    'Watanabe Ken',
+    'ken Watanabe'
+]
+
+for name in names:
+    if regex.match(name):
+        print(f"Matched: {name}")
+    else:
+        print(f"Not matched: {name}")
+        
+        
+22.How would you write a regex that matches a sentence where the first word is either Alice, Bob, or Carol; the second word is either eats, pets,
+or throws; the third word is apples, cats, or baseballs; and the sentence ends with a period? This regex should be case-insensitive. It must match the following:
+Ans:-
+To match the whole sentance we can use ^(Alice|Bob|Carol)\s+(eats|pets|throws)\s+(apples|cats|baseballs)\.$ in code as below.
+regex = re.compile(r'^(Alice|Bob|Carol)\s+(eats|pets|throws)\s+(apples|cats|baseballs)\.$', re.IGNORECASE)
+
+sentences = [
+    'Alice eats apples.',
+    'Bob pets cats.',
+    'Carol throws baseballs.',
+    'alice eats apples.',
+    'Bob  throws baseballs.',
+    'CAROL pets CATS.',
+    'Alice pets baseballs.',
+    'David eats dogs.',
+    'Alice eats.',
+    'Bob pets the cats',
+    'Carol throws apples'
+]
+
+for sentence in sentences:
+    if regex.match(sentence):
+        print(f"Matched: {sentence}")
+    else:
+        print(f"Not matched: {sentence}")
+
+
+
+
 
 
 
